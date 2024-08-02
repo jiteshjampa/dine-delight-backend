@@ -10,7 +10,7 @@ db().then(() => {
   app.use(cors({ origin: "http://localhost:5173", credentials: true }));
   app.use(bodyparser.urlencoded({ extended: true }));
   app.use(bodyparser.json());
-  app.use('/',(req,res)=>{
+  app.get('/',(req,res)=>{
     res.send('hello world!');
   })
   app.use("/api", require("./routes/register"));
